@@ -184,7 +184,7 @@ const CreatePost: React.FC<ICreateAreaProps> = ({ onAdd }) => {
                 />
                 <img
                   className="create-post__trash-image"
-                  src={deleteIcon}
+                  src={deleteIcon.src}
                   alt="Delete Image"
                   onClick={handleDeleteImageChange}
                 />
@@ -199,7 +199,7 @@ const CreatePost: React.FC<ICreateAreaProps> = ({ onAdd }) => {
                 />
                 <img
                   className="create-post__upload-image"
-                  src={imageInput}
+                  src={imageInput.src}
                   alt="Upload Image"
                 />
               </label>

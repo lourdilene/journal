@@ -107,7 +107,7 @@ const Post: React.FC<IPostProps> = ({ id, name, message, imageUrl, onDelete }) =
     <StyledPost>
       <div className="post__area">
         <button className="post__delete-button" onClick={handleClick}>
-          <img src={deleteIcon} alt="Delete" className="post__delete-icon" />
+          <img src={deleteIcon.src} alt="Delete" className="post__delete-icon" />
         </button>
         <div className="post__content">
           {imageUrl && (
