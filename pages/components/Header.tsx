@@ -27,7 +27,7 @@ const StyledHeader = styled.header`
 const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <img src={logo} alt="Logo" />
+      <img src={logo.src} alt="Logo" />
     </StyledHeader>
   );
 }
