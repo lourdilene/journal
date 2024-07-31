@@ -1,0 +1,9 @@
+services:
+  database:
+    image: "postgres:16.0-alpine3.18"
+    volumes: 
+      - ./postgresql:/var/lib/postgresql/data
+    env_file:
+      - ../.env.development
+    ports:
+      - "5432:5432"

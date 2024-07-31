@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["babel__generator"],
+    "types": ["babel__generator", "jest", "node"],
     "typeRoots": ["node_modules/@types", "path/to/your/custom/types"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

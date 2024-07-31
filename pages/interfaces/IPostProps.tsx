@@ -1,7 +1,7 @@
 interface IPostProps {
-    id: number;
+    id: number | null;
     name: string;
     message: string;
     imageUrl: string | null;
-    onDelete: (id: number) => void;
+    onDelete: (id: number | null) => void;
   }

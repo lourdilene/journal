@@ -114,7 +114,7 @@ const StyledCreatePost = styled.div`
 `;
 
 const CreatePost: React.FC<ICreateAreaProps> = ({ onAdd }) => {
-  const [post, setPost] = useState<IPost>({ name: "", message: "", imageUrl: null });
+  const [post, setPost] = useState<IPost>({ id: null, name: "", message: "", imageUrl: null });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -156,6 +156,7 @@ const CreatePost: React.FC<ICreateAreaProps> = ({ onAdd }) => {
   const submitPost = (event: FormEvent) => {
     onAdd(post);
     setPost({
+      id: null,
       name: "",
       message: "",
       imageUrl: null,
@@ -165,6 +166,7 @@ const CreatePost: React.FC<ICreateAreaProps> = ({ onAdd }) => {
 
   const clearPost = (event: FormEvent) => {
     setPost({
+      id: null,
       name: "",
       message: "",
       imageUrl: null,

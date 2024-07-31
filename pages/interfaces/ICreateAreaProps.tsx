@@ -1,3 +1,3 @@
 interface ICreateAreaProps {
-    onAdd: (post: IPost) => void;
+    onAdd: (post: IPost) => Promise<void>;
   }
