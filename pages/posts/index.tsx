@@ -1,9 +1,9 @@
-// client/src/App.tsx
+// pages/posts/index.tsx
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Post from "../components/Post";
 import CreateArea from "../components/CreatePost";
-import { getPosts, addPost as addPostService, deletePost as deletePostService } from '../../services/PostService';
+import { fetchPosts, createPost, removePost } from '../../controllers/PostController'; // Importando o controller
 import { IPost } from '../../models/PostModel';
 import './App.css';
 
@@ -36,20 +36,20 @@ const App: React.FC = () => {
     const [posts, setPosts] = useState<IPost[]>([]);
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            const loadedPosts = await getPosts();
+        const loadPosts = async () => {
+            const loadedPosts = await fetchPosts();
             setPosts(loadedPosts);
         };
-        fetchPosts();
+        loadPosts();
     }, []);
 
     const addPost = async (newPost: IPost) => {
-        const addedPost = await addPostService(newPost);
+        const addedPost = await createPost(newPost);
         setPosts(prevPosts => [...prevPosts, addedPost]);
     };
 
-    const deletePost = async (id:number | null) => {
-        await deletePostService(id);
+    const deletePost = async (id: number | null) => {
+        await removePost(id);
         setPosts(prevPosts => prevPosts.filter(post => post.id !== id));
     };
 

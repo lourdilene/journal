@@ -1,4 +1,4 @@
-// server/models/PostModel.ts
+// models/PostModel.ts
 import database from '../infrastructure/database';
 // import IPost from '../../lib/models/PostModel'
 
@@ -16,6 +16,7 @@ export class PostModel {
     }
 
     static async addPost(post: IPost): Promise<IPost> {
+        console.log(post);
         const queryText = 'INSERT INTO posts (name, message, image_url) VALUES ($1, $2, $3) RETURNING *';
         const result = await database.query({
             text: queryText,
@@ -23,7 +24,7 @@ export class PostModel {
         });
         return result.rows[0];
     }
-
+    
     // static async deletePost(id: number): Promise<void> {
     //     await database.executeQuery('DELETE FROM posts WHERE id = $1', [id]);
     // }

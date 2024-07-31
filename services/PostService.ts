@@ -1,7 +1,7 @@
-// client/src/services/PostService.ts
+//services/PostService.ts
 import { IPost } from '../models/PostModel';
 
-const API_URL = 'http://localhost:3000/api/posts';
+const API_URL = 'http://localhost:3000/api/posts/';
 
 export const getPosts = async (): Promise<IPost[]> => {
     const response = await fetch(API_URL);
